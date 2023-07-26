@@ -25,5 +25,5 @@ Instagram_URL = input("Please Enter Instagram URL-->")
 
 if Youtube_URL.strip():     # Check if the input is not empty
     audio_from_youtube(Youtube_URL)
-else:
+if Instagram_URL.strip():
     instagram_profile(Instagram_URL)    
