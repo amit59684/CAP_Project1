@@ -1,11 +1,10 @@
 import requests
 
 def weather_data(api_key, city):
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
-    i = requests.get(url)
+    get_url = requests.get(f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}")
 
-    if i.status_code == 200:
-        data = i.json()
+    if get_url.status_code == 200:
+        data = get_url.json()
         kelvin = data["main"]["temp"]
         celsius = kelvin - 273.15
         return celsius
@@ -17,4 +16,4 @@ if __name__ == "__main__":
     if temperature :
         print(f"The temperature in {city} is {temperature}°C.")
     else:
-        print("Plese check city name")    
+        print("Please check city name you have entered")    
